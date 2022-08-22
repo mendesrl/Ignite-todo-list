@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #0D0D0D;
+    width: 100%;
+}
+.header h1 span {
+    font-weight: 900;
+    display: inline-block;
+    font-weight: bold;
+    background: linear-gradient(to right, #4EA8DE 40%, #5E60CE 50%);
+    background-clip: text;
+     -webkit-background-clip: text;
+     color: transparent;
+     padding:0;
+}
