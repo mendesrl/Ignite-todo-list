@@ -15,7 +15,11 @@
 .header__title {
   font-weight: 900;
   display: inline-block;
-  background: linear-gradient(to right, var(--blue) 40%, var(--purple-dark) 50%);
+  background: linear-gradient(
+    to right,
+    var(--blue) 40%,
+    var(--purple-dark) 50%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

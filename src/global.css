@@ -24,7 +24,6 @@
   --middle: 1rem; /* 16px */
   --big: 2rem; /* 32px */
   --xbig: 3rem; /* 48px */
-  
 }
 
 * {
@@ -39,8 +38,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body, input, textarea, button {
-  font-family: 'Inter', sans-serif;
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
   line-height: 140%;
   font-weight: 400;
   font-size: 1rem;
