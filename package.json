@@ -16,8 +16,8 @@
     "react-dom": "^18.2.0"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix", "git add"
+    "src/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
     ]
   },
   "devDependencies": {
