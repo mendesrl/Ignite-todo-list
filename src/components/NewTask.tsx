@@ -1,5 +1,5 @@
-import "./NewTask.modules.css";
-import { PlusCircle } from "phosphor-react";
+import './NewTask.modules.css';
+import { PlusCircle } from 'phosphor-react';
 
 export function NewTask() {
   return (
