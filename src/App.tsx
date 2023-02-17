@@ -1,12 +1,18 @@
-import { Header } from "./components/Header";
-import { NewTask } from "./components/NewTask";
-import { TaskBoard } from "./components/TaskBoard";
+import { Header } from './components/Header';
+import { NewTask } from './components/NewTask';
+import { TaskBoard } from './components/TaskBoard';
 export function App() {
   return (
     <div className="App">
       <Header />
       <NewTask />
-      <TaskBoard />
+      <TaskBoard
+        newTask={{
+          id: 3,
+          description: 'Task 3',
+          completed: false,
+        }}
+      />
     </div>
   );
 }
