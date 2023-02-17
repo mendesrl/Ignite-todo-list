@@ -1,5 +1,20 @@
-import "./TaskBoard.modules.css";
-import { ClipboardText, Trash } from "phosphor-react";
+/* eslint-disable react/jsx-key */
+import './TaskBoard.modules.css';
+import { ClipboardText } from 'phosphor-react';
+import { Task } from './Task';
+
+const tasks = [
+  {
+    id: 1,
+    description: 'Task 1',
+    completed: true,
+  },
+  {
+    id: 2,
+    description: 'Task 2',
+    completed: false,
+  },
+];
 
 export function TaskBoard() {
   return (
@@ -30,34 +45,17 @@ export function TaskBoard() {
         </p>
         <p>Crie tarefas e organize seus itens a fazer</p>
       </div>
+
       <div className="tasks">
-        <div className="task">
-          <div className="task__title">
-            <input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
-          </div>
-          <div className="task__description">
-            <span className="task__description__text">
-              Integer urna interdum massa libero auctor neque turpis turpis
-              semper. Duis vel sed fames integer.
-            </span>
-          </div>
-          <div className="task__actions">
-            <Trash size={14} weight="bold" />
-          </div>
-        </div>
-        <div className="task">
-          <div className="task__title">
-            <input type="checkbox" id="checkbox-2" name="checkbox-2" />
-          </div>
-          <div className="task__description">
-            <span className="task__description__text">
-              Integer.
-            </span>
-          </div>
-          <div className="task__actions">
-            <Trash size={18} weight="bold" />
-          </div>
-        </div>
+        {tasks.map((task) => {
+          return (
+            <Task
+              id={task.id}
+              description={task.description}
+              completed={task.completed}
+            />
+          );
+        })}
       </div>
     </main>
   );
