@@ -28,19 +28,36 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ### 🎲 Rodando o Projeto 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone git@github.com:mendesrl/Ignite-todo-list.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
-
-# Vá para a pasta server
-$ cd server
+$ cd Ignite-todo-list
 
 # Instale as dependências
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
-
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+$ npm run dev
 ```
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Vite](https://vitejs.dev/)
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Husky](https://typicode.github.io/husky/#/)
+
+### Autora
+---
+
+<a href="https://larissamendes.hashnode.dev/">
+ <img src="https://github.com/mendesrl.png" width="80px;" alt=""/>
+ <br />
+ <sub><b>Larissa Mendes</b></sub></a> <a href="https://larissamendes.hashnode.dev/">🚀</a>
+
+
+Feito com ❤️ por Larissa Mendes 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Larissa-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/larissamendesribeiro/)](https://www.linkedin.com/in/larissamendesribeiro/) 
