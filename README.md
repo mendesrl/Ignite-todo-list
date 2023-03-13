@@ -14,7 +14,7 @@ Desafio proposto para reforçar os conceitos mais importantes de React Js e apre
 
 ### Features
 
-- [ ] Adicionar uma nova tarefa
+- [x] Adicionar uma nova tarefa
 - [ ] Marcar e desmarcar uma tarefa como concluída
 - [ ] Remover uma tarefa da listagem
 - [ ] Mostrar o progresso de conclusão das tarefas
