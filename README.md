@@ -18,3 +18,46 @@ Desafio proposto para reforçar os conceitos mais importantes de React Js e apre
 - [ ] Marcar e desmarcar uma tarefa como concluída
 - [ ] Remover uma tarefa da listagem
 - [ ] Mostrar o progresso de conclusão das tarefas
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+### 🎲 Rodando o Projeto 
+```bash
+# Clone este repositório
+$ git clone git@github.com:mendesrl/Ignite-todo-list.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Ignite-todo-list
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+```
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Vite](https://vitejs.dev/)
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Husky](https://typicode.github.io/husky/#/)
+
+### Autora
+---
+
+<a href="https://larissamendes.hashnode.dev/">
+ <img src="https://github.com/mendesrl.png" width="80px;" alt=""/>
+ <br />
+ <sub><b>Larissa Mendes</b></sub></a> <a href="https://larissamendes.hashnode.dev/">🚀</a>
+
+
+Feito com ❤️ por Larissa Mendes 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Larissa-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/larissamendesribeiro/)](https://www.linkedin.com/in/larissamendesribeiro/) 
