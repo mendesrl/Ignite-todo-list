@@ -6,13 +6,7 @@ export function App() {
     <div className="App">
       <Header />
       <NewTask />
-      <TaskBoard
-        newTask={{
-          id: 3,
-          description: 'Task 3',
-          completed: false,
-        }}
-      />
+      <TaskBoard />
     </div>
   );
 }
