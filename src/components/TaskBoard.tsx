@@ -4,39 +4,34 @@ import { ClipboardText } from 'phosphor-react';
 import { Task } from './Task';
 import { useState } from 'react';
 import { PlusCircle } from 'phosphor-react';
+import { v4 as uuidv4 } from 'uuid';
 
-export function TaskBoard(props: any) {
+export function TaskBoard() {
   //state : variavel que armazena o estado atual do componente (monitorada)
-  const [tasks, setTasks] = useState([
-    // {
-    //   id: 2,
-    //   description: 'Task 2',
-    //   completed: false,
-    // },
-  ]);
-  const [newTask, setNewTask] = useState('');
+  const tarefas = [
+    {id: uuidv4(), description: '1 Criar um novo tarefa', completed: false},
+    {id: uuidv4(), description: '2 Criar um novo tarefa', completed: true}
+  ]
+  const [tasks, setTasks] = useState([{}]);
   const isEmpty = tasks.length === 0;
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((task) => task.completed).length;
 
-  function handleCreateNewTask() {
+  function handleCreateNewTask(event: any)  {
     event.preventDefault();
     const newDescriptionTask = {
-      id:3,
+      id: uuidv4(),
       description: event.target.descriptionTask.value,
       completed: false,
     }
+    console.log(uuidv4());
     setTasks([...tasks, newDescriptionTask]);
     event.target.descriptionTask.value = '';
   }
 
-  // function handleDeleteTask(id) {
-  //   var
-  // }
-
   return (
     <>
-      <form onSubmit={handleCreateNewTask}>
+      <form onSubmit={event => handleCreateNewTask(event)}>
         <div className="new-task">
           <input
             name="descriptionTask"
@@ -65,7 +60,7 @@ export function TaskBoard(props: any) {
               Concluídas
             </span>
             <div className="task-status__badge">
-              <span className="task-status__number">{completedTasks}</span>
+              <span className="task-status__number">{completedTasks} de {totalTasks}</span>
             </div>
           </div>
         </div>
@@ -82,12 +77,13 @@ export function TaskBoard(props: any) {
 
         {!isEmpty && (
           <div className="tasks">
-            {tasks.map((task) => {
+            {tarefas.map((tarefa) => {
               return (
                 <Task
-                  id={task.id}
-                  description={task.description}
-                  completed={task.completed}
+                  id={tarefa.id}
+                  key={tarefa.id}
+                  description={tarefa.description}
+                  completed={tarefa.completed}
                 />
               );
             })}
