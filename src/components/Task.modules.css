@@ -94,4 +94,9 @@
 .task__actions {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.task__actions:hover{
+  opacity: 0.3;
 }

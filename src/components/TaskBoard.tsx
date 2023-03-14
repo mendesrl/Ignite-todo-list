@@ -8,10 +8,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 export function TaskBoard() {
   //state : variavel que armazena o estado atual do componente (monitorada)
-  const tarefas = [
+  const [tarefas, setTarefas] = useState([
     {id: uuidv4(), description: '1 Criar um novo tarefa', completed: false},
     {id: uuidv4(), description: '2 Criar um novo tarefa', completed: true}
-  ]
+  ])
+
   const [tasks, setTasks] = useState([{}]);
   const isEmpty = tasks.length === 0;
   const totalTasks = tasks.length;
@@ -27,6 +28,11 @@ export function TaskBoard() {
     console.log(uuidv4());
     setTasks([...tasks, newDescriptionTask]);
     event.target.descriptionTask.value = '';
+  }
+
+  function deleteTask(id: string) {
+    const tasksWithoutDeleteOne = tarefas.filter((task) => task.id!== id);
+    setTarefas(tasksWithoutDeleteOne);
   }
 
   return (
@@ -84,6 +90,7 @@ export function TaskBoard() {
                   key={tarefa.id}
                   description={tarefa.description}
                   completed={tarefa.completed}
+                  onDeleteTask={deleteTask}
                 />
               );
             })}
