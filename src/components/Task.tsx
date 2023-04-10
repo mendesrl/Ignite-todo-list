@@ -2,12 +2,26 @@
 import './Task.modules.css';
 import { Trash } from 'phosphor-react';
 
-export function Task({id,description, completed, onDeleteTask, onCompleteTask}) {
+interface TaskProps {
+  id: string;
+  description: string;
+  completed: boolean;
+  onDeleteTask: (id: string) => void;
+  onCompleteTask: (id: string) => void;
+}
+
+export function Task({
+  id,
+  description,
+  completed,
+  onDeleteTask,
+  onCompleteTask,
+}: TaskProps) {
   function handleDeleteTask() {
-    onDeleteTask(id)
+    onDeleteTask(id);
   }
   function handleCompleteTask() {
-    onCompleteTask(id)
+    onCompleteTask(id);
   }
   return (
     <>
