@@ -2,18 +2,22 @@
 import './Task.modules.css';
 import { Trash } from 'phosphor-react';
 
-export function Task({id,description, completed, onDeleteTask}) {
+export function Task({id,description, completed, onDeleteTask, onCompleteTask}) {
   function handleDeleteTask() {
     onDeleteTask(id)
   }
+  function handleCompleteTask() {
+    onCompleteTask(id)
+  }
   return (
     <>
-      <div className="task">
+      <div className="task" onDoubleClick={handleCompleteTask}>
         <div>
           <input
             type="checkbox"
             id={`checkbox-${id}`}
             checked={completed}
+            readOnly
           />
         </div>
         <div className="task__description">

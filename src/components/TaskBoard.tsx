@@ -26,15 +26,25 @@ export function TaskBoard() {
       completed: false,
     }
     console.log(uuidv4());
-    setTasks([...tasks, newDescriptionTask]);
+    setTarefas([...tarefas, newDescriptionTask]);
     event.target.descriptionTask.value = '';
   }
 
   function deleteTask(id: string) {
     const tasksWithoutDeleteOne = tarefas.filter((task) => task.id!== id);
+    console.log(tasksWithoutDeleteOne)
     setTarefas(tasksWithoutDeleteOne);
   }
 
+  function completeTask(id: string) {
+    const taskCompleted = tarefas.map((task) => {
+      if(task.id === id) {
+        return { ...task, completed: !task.completed };
+      }
+      return task
+    })
+    setTarefas(taskCompleted)
+  }
   return (
     <>
       <form onSubmit={event => handleCreateNewTask(event)}>
@@ -89,8 +99,9 @@ export function TaskBoard() {
                   id={tarefa.id}
                   key={tarefa.id}
                   description={tarefa.description}
-                  completed={tarefa.completed}
+                  onCompleteTask={completeTask}
                   onDeleteTask={deleteTask}
+                  completed={tarefa.completed}
                 />
               );
             })}
