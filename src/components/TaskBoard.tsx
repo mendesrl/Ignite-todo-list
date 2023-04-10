@@ -2,65 +2,67 @@
 import './TaskBoard.modules.css';
 import { ClipboardText } from 'phosphor-react';
 import { Task } from './Task';
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import { PlusCircle } from 'phosphor-react';
 import { v4 as uuidv4 } from 'uuid';
 
 export function TaskBoard() {
   //state : variavel que armazena o estado atual do componente (monitorada)
   const [tarefas, setTarefas] = useState([
-    {id: uuidv4(), description: '1 Criar um novo tarefa', completed: false},
-    {id: uuidv4(), description: '2 Criar um novo tarefa', completed: true}
-  ])
+    { id: uuidv4(), description: 'Estudar React', completed: false },
+    { id: uuidv4(), description: 'Estudar Typescript', completed: true },
+  ]);
 
-  const [tasks, setTasks] = useState([{}]);
+  const [newTask, setNewTask] = useState('');
   const isEmpty = tarefas.length === 0;
   const totalTasks = tarefas.length;
   const completedTasks = tarefas.filter((task) => task.completed).length;
 
-  function handleCreateNewTask(event: any)  {
+  function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const newDescriptionTask = {
       id: uuidv4(),
-      description: event.target.descriptionTask.value,
+      description: newTask,
       completed: false,
-    }
+    };
     setTarefas([...tarefas, newDescriptionTask]);
-    event.target.descriptionTask.value = '';
+    setNewTask('');
   }
 
   function deleteTask(id: string) {
-    const tasksWithoutDeleteOne = tarefas.filter((task) => task.id!== id);
+    const tasksWithoutDeleteOne = tarefas.filter((task) => task.id !== id);
     setTarefas(tasksWithoutDeleteOne);
   }
 
   function completeTask(id: string) {
     const taskCompleted = tarefas.map((task) => {
-      if(task.id === id) {
+      if (task.id === id) {
         return { ...task, completed: !task.completed };
       }
-      return task
-    })
-    setTarefas(taskCompleted)
+      return task;
+    });
+    setTarefas(taskCompleted);
   }
-  function handleNewTaskChange() {
-    event.target.setCustomValidity('')
+  function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('');
+    setNewTask(event.target.value);
   }
-  function handleNewTaskInvalid() {
-    event.target.setCustomValidity('Esse campo é obrigatorio')
+  function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('Esse campo é obrigatorio');
   }
   return (
     <>
-      <form onSubmit={event => handleCreateNewTask(event)}>
+      <form onSubmit={handleCreateNewTask}>
         <div className="new-task">
           <input
             name="descriptionTask"
             className="new-task__input"
             placeholder="Adicione uma nova tarefa"
             required
-            autoComplete='off'
+            autoComplete="off"
             onChange={handleNewTaskChange}
             onInvalid={handleNewTaskInvalid}
+            value={newTask}
           ></input>
           <button className="new-task__button" type="submit">
             <span>Criar</span>
@@ -84,7 +86,9 @@ export function TaskBoard() {
               Concluídas
             </span>
             <div className="task-status__badge">
-              <span className="task-status__number">{completedTasks} de {totalTasks}</span>
+              <span className="task-status__number">
+                {completedTasks} de {totalTasks}
+              </span>
             </div>
           </div>
         </div>
