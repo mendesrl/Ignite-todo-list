@@ -14,9 +14,9 @@ export function TaskBoard() {
   ])
 
   const [tasks, setTasks] = useState([{}]);
-  const isEmpty = tasks.length === 0;
-  const totalTasks = tasks.length;
-  const completedTasks = tasks.filter((task) => task.completed).length;
+  const isEmpty = tarefas.length === 0;
+  const totalTasks = tarefas.length;
+  const completedTasks = tarefas.filter((task) => task.completed).length;
 
   function handleCreateNewTask(event: any)  {
     event.preventDefault();
@@ -25,14 +25,12 @@ export function TaskBoard() {
       description: event.target.descriptionTask.value,
       completed: false,
     }
-    console.log(uuidv4());
     setTarefas([...tarefas, newDescriptionTask]);
     event.target.descriptionTask.value = '';
   }
 
   function deleteTask(id: string) {
     const tasksWithoutDeleteOne = tarefas.filter((task) => task.id!== id);
-    console.log(tasksWithoutDeleteOne)
     setTarefas(tasksWithoutDeleteOne);
   }
 
@@ -45,6 +43,12 @@ export function TaskBoard() {
     })
     setTarefas(taskCompleted)
   }
+  function handleNewTaskChange() {
+    event.target.setCustomValidity('')
+  }
+  function handleNewTaskInvalid() {
+    event.target.setCustomValidity('Esse campo é obrigatorio')
+  }
   return (
     <>
       <form onSubmit={event => handleCreateNewTask(event)}>
@@ -53,6 +57,10 @@ export function TaskBoard() {
             name="descriptionTask"
             className="new-task__input"
             placeholder="Adicione uma nova tarefa"
+            required
+            autoComplete='off'
+            onChange={handleNewTaskChange}
+            onInvalid={handleNewTaskInvalid}
           ></input>
           <button className="new-task__button" type="submit">
             <span>Criar</span>
