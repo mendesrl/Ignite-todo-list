@@ -9,7 +9,7 @@
 Desafio proposto para reforçar os conceitos mais importantes de React Js e aprender ainda mais conceitos que serão utilizados em todas as aplicações futuramente desenvolvidas.
 
 <h4 align="center"> 
-	🚧 Em desenvolvimento...  🚧
+	🚀 [Demo](https://ignite-todo-list-2ay26qw8z-mendesrl.vercel.app/) 🚀
 </h4>
 
 ### Features
