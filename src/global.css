@@ -24,6 +24,9 @@
   --middle: 1rem; /* 16px */
   --big: 2rem; /* 32px */
   --xbig: 3rem; /* 48px */
+
+  /*Font size*/
+  --font-normal: 14px; /* 14px */
 }
 
 * {

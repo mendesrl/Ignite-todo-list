@@ -23,8 +23,8 @@
 
 .task-status__text {
   font-weight: 700;
-  font-size: 14px;
-  margin-right: 8px;
+  font-size: var(--font-normal);
+  margin-right: var(--small);
 }
 .task-status__text--blue {
   color: var(--blue);
@@ -36,10 +36,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px 8px;
+  padding: 2px var(--small);
   gap: 10px;
   height: 19px;
-  background: #333333;
+  background: var(--gray-400);
   border-radius: 999px;
 }
 
@@ -118,7 +118,7 @@
   background: var(--blue);
 }
 .new-task__button span {
-  font-size: 14px;
+  font-size: var(--font-normal);
   font-weight: 700;
-  padding-right: 8px;
+  padding-right: var(--small);
 }
